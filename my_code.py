@@ -7,7 +7,8 @@ def fix_phone_num(phone_num_to_fix):
   four_part = phone_num_to_fix[6:] # # 8823 (last four digits)
   
   fixed_num = "(" + area_code + ")" + " " + three_part + " " + four_part 
-  
+  if (len(phone_num_to_fix) != 10):
+    raise ValueError("Can only format numbers that are exactly 10 digits long")
   return fixed_num
 
 def test_fix_phone_num():
